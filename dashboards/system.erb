@@ -1,0 +1,45 @@
+
+
+<% content_for :title do %>OSX System dashboard<% end %>
+<div class="gridster">
+  <ul>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="hostdetaildata" data-view="List" data-unordered="true"
+        data-title="Local Host Details" data-moreinfo="host data details">
+      </div>
+    </li>
+
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+      <div data-id="time" data-view="Clock">
+      </div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="cpuProc" data-view="List" data-unordered="false"
+        data-title="Top Procs By CPU %"
+        data-moreinfo=""></div>
+    </li>
+
+    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="memProc" data-view="List" data-unordered="false"
+        data-title="Top Procs By Mem %"
+        data-moreinfo=""></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="rxMb_graph" data-view="Graph" data-title="Data Received" style="background-color:#ff9618"></div>
+    </li>
+
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="txMb_graph" data-view="Graph" data-title="Data Transmitted" style="background-color:#ff9618"></div>
+    </li>
+
+  </ul>
+  <center>
+    <div style="font-size: 12px">
+      Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }'
+      \http://<%=request.host%>:<%=request.port%>/widgets/welcome
+    </div>
+  </center>
+</div>

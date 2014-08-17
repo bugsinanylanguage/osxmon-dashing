@@ -2,11 +2,17 @@ osxmon-dashing
 ==============
 
 WARNING: very much a Work In Progress. Please don't expect this to be awesome.
+Instructions below are more for me than anything, if they don't make sense to
+you that's probably why. :)
 
+Details
+==============
 Very basic osx system monitors displayed in dashing.
 
-This is a personal project for me to learn about ruby, coffee, and dashing. So much for learning one thing at a time...
-Once I complete this, I'm hoping to use the knowledge to build other dashing boards.
+This is a personal project for me to learn about ruby, coffee, and dashing.
+So much for learning one thing at a time...
+Once I complete this, I'm hoping to use the knowledge to build other dashing
+boards.
 
 Display panels:
 
@@ -27,4 +33,14 @@ ruby gems:
 
 Dashing:
   see: http://dashing.io/
-  
+
+Install/Run:
+  Install Dashing per the instructions at the link above.
+  Go to the dashing directory you created, and generate a new dashboard per
+    the Dashing docs.
+  Clone this repo in the new dashboard directory.
+  Add the ruby gems above to the Gemfile.
+  Run "bundle install"
+  Run "dashing start"
+
+  You'll then be able to reach this board at http://localhost:3030/system

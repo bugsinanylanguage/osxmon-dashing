@@ -1,0 +1,8 @@
+#ignore all files
+**/*
+
+#except for these
+!dashboards/system.erb
+!jobs/system.rb
+!.gitignore
+!README.md
