@@ -4,15 +4,31 @@
 <div class="gridster">
   <ul>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="hostdetaildata" data-view="List" data-unordered="true"
         data-title="Local Host Details" data-moreinfo="host data details">
       </div>
     </li>
 
-    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="time" data-view="Clock">
       </div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="diskPercent" data-view="Meter" data-title="Disk % Used" data-min="0" data-max="100"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="memPercent" data-view="Meter" data-title="RAM % Used" data-min="0" data-max="100"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="rxMbGraph" data-view="Graph" data-title="Data Received (MB)" style="background-color:#ff9618"></div>
+    </li>
+
+    <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="txMbGraph" data-view="Graph" data-title="Data Transmitted (MB)" style="background-color:#ff9618"></div>
     </li>
 
     <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
@@ -25,14 +41,6 @@
       <div data-id="memProc" data-view="List" data-unordered="false"
         data-title="Top Procs By Mem %"
         data-moreinfo=""></div>
-    </li>
-
-    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="rxMbGraph" data-view="Graph" data-title="Data Received (MB)" style="background-color:#ff9618"></div>
-    </li>
-
-    <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
-      <div data-id="txMbGraph" data-view="Graph" data-title="Data Transmitted (MB)" style="background-color:#ff9618"></div>
     </li>
 
   </ul>

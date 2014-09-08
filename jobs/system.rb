@@ -80,6 +80,13 @@ def self.bandtx( netiface )
   (((send2.to_f - send1.to_f)/1024)/1024).round(3)
 end
 
+def self.memPctUsed()
+  top = `top -l1 | awk '/PhysMem/'`
+  top = top.gsub(/[\.\,a-zA-Z:]/, "").split(" ").reverse
+  final = ((top[3].to_f / (top[0].to_f + top[3].to_f)) * 100).round(2)
+  return final
+end
+
 def self.getNewStat(statname)
   case statname
     when 'duGig'
@@ -89,7 +96,7 @@ def self.getNewStat(statname)
     when 'cpu'
       return Usagewatch.uw_cpuused
     when 'memPct'
-      return Usagewatch.uw_memused
+      return memPctUsed
     when 'sysload'
       return Usagewatch.uw_load
     when 'rxMb'
@@ -121,6 +128,12 @@ SCHEDULER.every loopTime, :first_in => 0 do |job|
   @stats.each do | stat, stuff |
     send_event( "#{stat}Graph", points: stuff.getPoints() )
   end
+
+  dpct = (@stats[ :duPct ]).getLastY
+  send_event('diskPercent', { value: dpct })
+
+  mpct = (@stats[ :memPct ]).getLastY
+  send_event('memPercent', { value: mpct })
 
   send_event('hostdetaildata', { items: details.values })
 
