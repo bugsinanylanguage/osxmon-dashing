@@ -20,16 +20,20 @@ clock: time/date
 list: system name & network addresses/interfaces
 list: top 10 procs by cpu %
 list: top 10 procs by mem %
-graph: net rx
-graph: net tx
+graph: net rx MB
+graph: net tx MB
 graph: system load
 meter: disk % used
+meter: mem % used
 
 Dependencies:
 
 ruby gems:
-  - socket
-  - usagewatch_ext
+gem 'dashing'
+gem 'usagewatch_ext'
+gem 'nokogiri'
+gem 'htmlentities'
+gem 'system-getifaddrs'
 
 Dashing:
   see: http://dashing.io/
@@ -44,3 +48,7 @@ Install/Run:
   Run "dashing start"
 
   You'll then be able to reach this board at http://localhost:3030/system
+
+
+TODO:
+  - add system load graph
